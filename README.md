@@ -1,3 +1,4 @@
+<h2>// still on development mode</h2>
 <h1 align="center">
 🌐 MERN Stack
 </h1>
@@ -116,14 +117,19 @@ redux: ^3.7.2 | morgan: ^1.7.0
 
 # Screenshots of this project
 
-User visit public and Home page
-![User visit public and Home page](https://drive.google.com/file/d/1ksq8mGwxRC-6ukOueLZHgVhNl5Ywnrxr/view?usp=sharing)
+User visit register and Login page
+![User visit public and Home page](public/images/register_page.png)
 
-User can sign in or sign up
-![User can sign in or sign up]()
+Home Page
+![User can sign in or sign up](public/images/home_page.png)
 
-After signing in user can go to account route and make request to token-protected API endpoint
-![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)
+Product Page
+![User can sign in or sign up](public/images/product_page.png)
+
+Cart Page
+![User can sign in or sign up](public/images/cart.png)
+
+
 
 ## Standard
 
@@ -133,10 +139,10 @@ After signing in user can go to account route and make request to token-protecte
 
 [Create new Issues](https://github.com/shivam-2311/eshop2.0/issues) (preferred)
 
-Email Me: amazingandyyy@gmail.com (welcome, say hi)
+Email Me: shivam.shiv2311@gmail.com (welcome, say hi)
 
 ## Author
-[Amazingandyyy](https://shivam-2311com.netlify.app/)
+[Shivam](https://shivam-2311com.netlify.app/)
 
 ### License
 [MIT](https://github.com/shivam-2311/)
