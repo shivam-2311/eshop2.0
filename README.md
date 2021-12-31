@@ -1,4 +1,4 @@
-<h2>// still on development mode</h2>
+<h2>// still on development </h2>
 <h1 align="center">
 🌐 MERN Stack
 </h1>
