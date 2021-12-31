@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+<h1 align="center">
+🌐 MERN Stack
+</h1>
+<p align="center">
+MongoDB, Expressjs, React/Redux, Nodejs
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+   <a href="https://travis-ci.com/amazingandyyy/mern">
+      <img src="https://travis-ci.com/amazingandyyy/mern.svg?branch=master" />
+   </a>
+   <a href="https://github.com/amazingandyyy/mern/blob/master/LICENSE">
+      <img src="https://img.shields.io/badge/License-MIT-green.svg" />
+   </a>
+   <a href="https://circleci.com/gh/amazingandyyy/mern">
+      <img src="https://circleci.com/gh/amazingandyyy/mern.svg?style=svg" />
+   </a>
+</p>
 
-## Available Scripts
+> MERN is a fullstack implementation in MongoDB, Expressjs, React/Redux, Nodejs.
 
-In the project directory, you can run:
+MERN stack is the idea of using Javascript/Node for fullstack web development.
 
-### `npm start`
+## clone or download
+```terminal
+$ git clone https://github.com/shivam-2311/eshop2.0.git
+$ npm i
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## project structure
+```terminal
+LICENSE
+package.json
+server/
+   package.json
+   .env (to create .env, check [prepare your secret session])
+client/
+   package.json
+...
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Usage (run fullstack app on your machine)
 
-### `npm test`
+## Prerequisites
+- [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
+- [Node](https://nodejs.org/en/download/) ^10.0.0
+- [npm](https://nodejs.org/en/download/package-manager/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
 
-### `npm run build`
+## Client-side usage(PORT: 3000)
+```terminal
+ // go to client folder
+$ npm i       // npm install packages
+$ npm run dev // run it locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// deployment for client app
+$ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
+$ npm run start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Server-side usage(PORT: 8000)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prepare your secret
 
-### `npm run eject`
+run the script at the first level:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+(You need to add a JWT_SECRET in .env to connect to MongoDB)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```terminal
+// in the root level
+$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```terminal
+$ cd Backend   // go to server folder
+$ npm i       // npm install packages
+$ npm run dev // run it locally
+$ npm run build // this will build the server code to es5 js codes and generate a dist file
+```
 
-## Learn More
+## Deploy Server to [Heroku](https://dashboard.heroku.com/)
+```terminal
+$ npm i -g heroku
+$ heroku login
+...
+$ heroku create
+$ npm run heroku:add <your-super-amazing-heroku-app>
+// remember to run this command in the root level, not the server level, so if you follow the documentation along, you may need to do `cd ..`
+$ pwd
+/Users/<your-name>/mern
+$ npm run deploy:heroku
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### After creating heroku
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+remember to update the file of [client/webpack.prod.js](https://github.com/amazingandyyy/mern/blob/master/client/webpack.prod.js)
+```javascript
+ 'API_URI': JSON.stringify('https://your-super-amazing-heroku-app.herokuapp.com')
+```
 
-### Code Splitting
+# Dependencies(tech-stacks)
+Client-side | Server-side
+--- | ---
+axios: ^0.15.3 | bcrypt-nodejs: ^0.0.3
+babel-preset-stage-1: ^6.1.18|body-parser: ^1.15.2
+lodash: ^3.10.1 | cors: ^2.8.1
+react: ^16.2.0 | dotenv: ^2.0.0
+react-dom: ^16.2.0 | express: ^4.14.0
+react-redux: ^4.0.0 | jwt-simple: ^0.5.1
+react-router-dom: ^4.2.2 | mongoose: ^4.7.4
+redux: ^3.7.2 | morgan: ^1.7.0
+@reduxjs/toolkit: ^2.1.0 |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Screenshots of this project
 
-### Analyzing the Bundle Size
+User visit public and Home page
+![User visit public and Home page](https://drive.google.com/file/d/1ksq8mGwxRC-6ukOueLZHgVhNl5Ywnrxr/view?usp=sharing)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+User can sign in or sign up
+![User can sign in or sign up]()
 
-### Making a Progressive Web App
+After signing in user can go to account route and make request to token-protected API endpoint
+![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Standard
 
-### Advanced Configuration
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## BUGs or comments
 
-### Deployment
+[Create new Issues](https://github.com/shivam-2311/eshop2.0/issues) (preferred)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Email Me: amazingandyyy@gmail.com (welcome, say hi)
 
-### `npm run build` fails to minify
+## Author
+[Amazingandyyy](https://shivam-2311com.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### License
+[MIT](https://github.com/shivam-2311/)
